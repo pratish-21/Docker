@@ -1,0 +1,477 @@
+login as: azureuser
+azureuser@20.121.66.79's password:
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.11.0-1018-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sun Aug 17 13:40:30 UTC 2025
+
+  System load:  0.79              Processes:             128
+  Usage of /:   8.3% of 28.02GB   Users logged in:       0
+  Memory usage: 3%                IPv4 address for eth0: 10.0.0.4
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+9 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sat Aug 16 10:22:28 2025 from 49.205.102.75
+azureuser@bash:~$ sudos u
+Command 'sudos' not found, did you mean:
+  command 'sudo' from deb sudo (1.9.14p2-1ubuntu1)
+  command 'sudo' from deb sudo-ldap (1.9.14p2-1ubuntu1)
+Try: sudo apt install <deb name>
+azureuser@bash:~$ sudo su
+root@bash:/home/azureuser# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED      SIZE
+hello-world   latest    1b44b5a3e06a   8 days ago   10.1kB
+root@bash:/home/azureuser# docker pull redis
+Using default tag: latest
+latest: Pulling from library/redis
+b1badc6e5066: Pull complete
+1ca7d5e3c9bc: Pull complete
+c456b835af74: Pull complete
+d8436afda7e9: Pull complete
+ab5447c9536a: Pull complete
+4f4fb700ef54: Pull complete
+accfee890494: Pull complete
+Digest: sha256:e7d6b261beaa22b1dc001f438b677f1c691ac7805607d8979bae65fe0615c2e6
+Status: Downloaded newer image for redis:latest
+docker.io/library/redis:latest
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@bash:/home/azureuser# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    1b44b5a3e06a   8 days ago    10.1kB
+redis         latest    06c3286e0b9e   13 days ago   157MB
+root@bash:/home/azureuser# docker run redis
+Starting Redis Server
+1:C 17 Aug 2025 13:43:07.924 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 17 Aug 2025 13:43:07.924 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 17 Aug 2025 13:43:07.924 * Redis version=8.2.0, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 17 Aug 2025 13:43:07.924 * Configuration loaded
+1:M 17 Aug 2025 13:43:07.925 * monotonic clock: POSIX clock_gettime
+1:M 17 Aug 2025 13:43:07.925 * Running mode=standalone, port=6379.
+1:M 17 Aug 2025 13:43:07.926 * <bf> RedisBloom version 8.2.0 (Git=unknown)
+1:M 17 Aug 2025 13:43:07.926 * <bf> Registering configuration options: [
+1:M 17 Aug 2025 13:43:07.926 * <bf>     { bf-error-rate       :      0.01 }
+1:M 17 Aug 2025 13:43:07.926 * <bf>     { bf-initial-size     :       100 }
+1:M 17 Aug 2025 13:43:07.926 * <bf>     { bf-expansion-factor :         2 }
+1:M 17 Aug 2025 13:43:07.926 * <bf>     { cf-bucket-size      :         2 }
+1:M 17 Aug 2025 13:43:07.926 * <bf>     { cf-initial-size     :      1024 }
+1:M 17 Aug 2025 13:43:07.926 * <bf>     { cf-max-iterations   :        20 }
+1:M 17 Aug 2025 13:43:07.926 * <bf>     { cf-expansion-factor :         1 }
+1:M 17 Aug 2025 13:43:07.926 * <bf>     { cf-max-expansions   :        32 }
+1:M 17 Aug 2025 13:43:07.926 * <bf> ]
+1:M 17 Aug 2025 13:43:07.926 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 17 Aug 2025 13:43:07.931 * <search> Redis version found by RedisSearch : 8.2.0 - oss
+1:M 17 Aug 2025 13:43:07.931 * <search> RediSearch version 8.2.0 (Git=d81ebce)
+1:M 17 Aug 2025 13:43:07.932 * <search> Low level api version 1 initialized successfully
+1:M 17 Aug 2025 13:43:07.932 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000,
+1:M 17 Aug 2025 13:43:07.932 * <search> Initialized thread pools!
+1:M 17 Aug 2025 13:43:07.932 * <search> Disabled workers threadpool of size 0
+1:M 17 Aug 2025 13:43:07.932 * <search> Subscribe to config changes
+1:M 17 Aug 2025 13:43:07.932 * <search> Enabled role change notification
+1:M 17 Aug 2025 13:43:07.932 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 17 Aug 2025 13:43:07.932 * <search> Register write commands
+1:M 17 Aug 2025 13:43:07.932 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 17 Aug 2025 13:43:07.933 * <timeseries> RedisTimeSeries version 80200, git_sha=1439d4a439ca9c063e6ef124a510abff09a5d493
+1:M 17 Aug 2025 13:43:07.933 * <timeseries> Redis version found by RedisTimeSeries : 8.2.0 - oss
+1:M 17 Aug 2025 13:43:07.933 * <timeseries> Registering configuration options: [
+1:M 17 Aug 2025 13:43:07.933 * <timeseries>     { ts-compaction-policy   :              }
+1:M 17 Aug 2025 13:43:07.933 * <timeseries>     { ts-num-threads         :            3 }
+1:M 17 Aug 2025 13:43:07.933 * <timeseries>     { ts-retention-policy    :            0 }
+1:M 17 Aug 2025 13:43:07.933 * <timeseries>     { ts-duplicate-policy    :        block }
+1:M 17 Aug 2025 13:43:07.933 * <timeseries>     { ts-chunk-size-bytes    :         4096 }
+1:M 17 Aug 2025 13:43:07.933 * <timeseries>     { ts-encoding            :   compressed }
+1:M 17 Aug 2025 13:43:07.933 * <timeseries>     { ts-ignore-max-time-diff:            0 }
+1:M 17 Aug 2025 13:43:07.933 * <timeseries>     { ts-ignore-max-val-diff :     0.000000 }
+1:M 17 Aug 2025 13:43:07.933 * <timeseries> ]
+1:M 17 Aug 2025 13:43:07.934 * <timeseries> Detected redis oss
+1:M 17 Aug 2025 13:43:07.934 * <timeseries> Enabled diskless replication
+1:M 17 Aug 2025 13:43:07.934 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 17 Aug 2025 13:43:07.934 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 17 Aug 2025 13:43:07.934 * <ReJSON> version: 80200 git sha: unknown branch: unknown
+1:M 17 Aug 2025 13:43:07.935 * <ReJSON> Exported RedisJSON_V1 API
+1:M 17 Aug 2025 13:43:07.935 * <ReJSON> Exported RedisJSON_V2 API
+1:M 17 Aug 2025 13:43:07.935 * <ReJSON> Exported RedisJSON_V3 API
+1:M 17 Aug 2025 13:43:07.935 * <ReJSON> Exported RedisJSON_V4 API
+1:M 17 Aug 2025 13:43:07.935 * <ReJSON> Exported RedisJSON_V5 API
+1:M 17 Aug 2025 13:43:07.935 * <ReJSON> Enabled diskless replication
+1:M 17 Aug 2025 13:43:07.935 * <ReJSON> Initialized shared string cache, thread safe: false.
+1:M 17 Aug 2025 13:43:07.935 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 17 Aug 2025 13:43:07.935 * <search> Acquired RedisJSON_V5 API
+1:M 17 Aug 2025 13:43:07.935 * Server initialized
+1:M 17 Aug 2025 13:43:07.935 * Ready to accept connections tcp
+^C1:signal-handler (1755438193) Received SIGINT scheduling shutdown...
+1:M 17 Aug 2025 13:43:13.965 * User requested shutdown...
+1:M 17 Aug 2025 13:43:13.965 * Saving the final RDB snapshot before exiting.
+1:M 17 Aug 2025 13:43:13.988 * DB saved on disk
+1:M 17 Aug 2025 13:43:13.988 # Redis is now ready to exit, bye bye...
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@bash:/home/azureuser# docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS     NAMES
+cb5abc8d8042   redis         "docker-entrypoint.s…"   25 seconds ago   Exited (0) 16 seconds ago             stupefied_pasteur
+4987f11746f5   hello-world   "/hello"                 29 hours ago     Exited (0) 29 hours ago               reverent_chatelet
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@bash:/home/azureuser# docker start redis
+Error response from daemon: No such container: redis
+Error: failed to start containers: redis
+root@bash:/home/azureuser# docker run -d redis
+4029597ab2580b76ea8de1bca8d42c46e8f8a40c01ebcce61948d70726e1fdbc
+root@bash:/home/azureuser# docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED              STATUS                     PORTS      NAMES
+4029597ab258   redis         "docker-entrypoint.s…"   About a minute ago   Up About a minute          6379/tcp   intelligent_elbakyan
+cb5abc8d8042   redis         "docker-entrypoint.s…"   4 minutes ago        Exited (0) 4 minutes ago              stupefied_pasteur
+4987f11746f5   hello-world   "/hello"                 29 hours ago         Exited (0) 29 hours ago               reverent_chatelet
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS      NAMES
+4029597ab258   redis     "docker-entrypoint.s…"   About a minute ago   Up About a minute   6379/tcp   intelligent_elbakyan
+root@bash:/home/azureuser# docker run -d
+docker: 'docker run' requires at least 1 argument
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+See 'docker run --help' for more information
+root@bash:/home/azureuser# docker run -d redis
+2f6e7a146c22412a2584051b9e41b73469e6cf172f49a610f58e312df9651f9a
+root@bash:/home/azureuser# ^C
+root@bash:/home/azureuser# docker stop 2f6e7a146c22412a2584051b9e41b73469e6cf172f49a610f58e312df9651f9a
+2f6e7a146c22412a2584051b9e41b73469e6cf172f49a610f58e312df9651f9a
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS      NAMES
+4029597ab258   redis     "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   6379/tcp   intelligent_elbakyan
+root@bash:/home/azureuser# ^C
+root@bash:/home/azureuser# docker stop 4029597ab258
+4029597ab258
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@bash:/home/azureuser# docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS     NAMES
+2f6e7a146c22   redis         "docker-entrypoint.s…"   48 seconds ago   Exited (0) 33 seconds ago             vibrant_hugle
+4029597ab258   redis         "docker-entrypoint.s…"   2 minutes ago    Exited (0) 10 seconds ago             intelligent_elbakyan
+cb5abc8d8042   redis         "docker-entrypoint.s…"   5 minutes ago    Exited (0) 5 minutes ago              stupefied_pasteur
+4987f11746f5   hello-world   "/hello"                 29 hours ago     Exited (0) 29 hours ago               reverent_chatelet
+root@bash:/home/azureuser# docker run redis:4.0
+Unable to find image 'redis:4.0' locally
+4.0: Pulling from library/redis
+54fec2fa59d0: Pull complete
+9c94e11103d9: Pull complete
+04ab1bfc453f: Pull complete
+7988789e1fb7: Pull complete
+8ce1bab2086c: Pull complete
+40e134f79af1: Pull complete
+Digest: sha256:2e03fdd159f4a08d2165ca1c92adde438ae4e3e6b0f74322ce013a78ee81c88d
+Status: Downloaded newer image for redis:4.0
+1:C 17 Aug 13:50:04.285 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 17 Aug 13:50:04.285 # Redis version=4.0.14, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 17 Aug 13:50:04.285 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 17 Aug 13:50:04.286 * Running mode=standalone, port=6379.
+1:M 17 Aug 13:50:04.286 # Server initialized
+1:M 17 Aug 13:50:04.286 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 17 Aug 13:50:04.286 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 17 Aug 13:50:04.286 * Ready to accept connections
+^C1:signal-handler (1755438609) Received SIGINT scheduling shutdown...
+1:M 17 Aug 13:50:09.798 # User requested shutdown...
+1:M 17 Aug 13:50:09.798 * Saving the final RDB snapshot before exiting.
+1:M 17 Aug 13:50:09.806 * DB saved on disk
+1:M 17 Aug 13:50:09.806 # Redis is now ready to exit, bye bye...
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@bash:/home/azureuser# docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                          PORTS     NAMES
+fead07e429fd   redis:4.0     "docker-entrypoint.s…"   16 seconds ago   Exited (0) 9 seconds ago                  funny_cerf
+2f6e7a146c22   redis         "docker-entrypoint.s…"   2 minutes ago    Exited (0) 2 minutes ago                  vibrant_hugle
+4029597ab258   redis         "docker-entrypoint.s…"   4 minutes ago    Exited (0) About a minute ago             intelligent_elbakyan
+cb5abc8d8042   redis         "docker-entrypoint.s…"   7 minutes ago    Exited (0) 7 minutes ago                  stupefied_pasteur
+4987f11746f5   hello-world   "/hello"                 29 hours ago     Exited (0) 29 hours ago                   reverent_chatelet
+root@bash:/home/azureuser# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    1b44b5a3e06a   8 days ago    10.1kB
+redis         latest    06c3286e0b9e   13 days ago   157MB
+redis         4.0       191c4017dcdd   5 years ago   89.3MB
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@bash:/home/azureuser# docker run -p60:6379 redis
+Starting Redis Server
+1:C 17 Aug 2025 13:57:45.226 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 17 Aug 2025 13:57:45.226 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 17 Aug 2025 13:57:45.226 * Redis version=8.2.0, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 17 Aug 2025 13:57:45.226 * Configuration loaded
+1:M 17 Aug 2025 13:57:45.227 * monotonic clock: POSIX clock_gettime
+1:M 17 Aug 2025 13:57:45.227 * Running mode=standalone, port=6379.
+1:M 17 Aug 2025 13:57:45.228 * <bf> RedisBloom version 8.2.0 (Git=unknown)
+1:M 17 Aug 2025 13:57:45.228 * <bf> Registering configuration options: [
+1:M 17 Aug 2025 13:57:45.228 * <bf>     { bf-error-rate       :      0.01 }
+1:M 17 Aug 2025 13:57:45.228 * <bf>     { bf-initial-size     :       100 }
+1:M 17 Aug 2025 13:57:45.228 * <bf>     { bf-expansion-factor :         2 }
+1:M 17 Aug 2025 13:57:45.228 * <bf>     { cf-bucket-size      :         2 }
+1:M 17 Aug 2025 13:57:45.228 * <bf>     { cf-initial-size     :      1024 }
+1:M 17 Aug 2025 13:57:45.228 * <bf>     { cf-max-iterations   :        20 }
+1:M 17 Aug 2025 13:57:45.228 * <bf>     { cf-expansion-factor :         1 }
+1:M 17 Aug 2025 13:57:45.228 * <bf>     { cf-max-expansions   :        32 }
+1:M 17 Aug 2025 13:57:45.228 * <bf> ]
+1:M 17 Aug 2025 13:57:45.228 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 17 Aug 2025 13:57:45.232 * <search> Redis version found by RedisSearch : 8.2.0 - oss
+1:M 17 Aug 2025 13:57:45.232 * <search> RediSearch version 8.2.0 (Git=d81ebce)
+1:M 17 Aug 2025 13:57:45.233 * <search> Low level api version 1 initialized successfully
+1:M 17 Aug 2025 13:57:45.233 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000,
+1:M 17 Aug 2025 13:57:45.233 * <search> Initialized thread pools!
+1:M 17 Aug 2025 13:57:45.233 * <search> Disabled workers threadpool of size 0
+1:M 17 Aug 2025 13:57:45.233 * <search> Subscribe to config changes
+1:M 17 Aug 2025 13:57:45.233 * <search> Enabled role change notification
+1:M 17 Aug 2025 13:57:45.233 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 17 Aug 2025 13:57:45.233 * <search> Register write commands
+1:M 17 Aug 2025 13:57:45.233 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 17 Aug 2025 13:57:45.233 * <timeseries> RedisTimeSeries version 80200, git_sha=1439d4a439ca9c063e6ef124a510abff09a5d493
+1:M 17 Aug 2025 13:57:45.233 * <timeseries> Redis version found by RedisTimeSeries : 8.2.0 - oss
+1:M 17 Aug 2025 13:57:45.233 * <timeseries> Registering configuration options: [
+1:M 17 Aug 2025 13:57:45.233 * <timeseries>     { ts-compaction-policy   :              }
+1:M 17 Aug 2025 13:57:45.233 * <timeseries>     { ts-num-threads         :            3 }
+1:M 17 Aug 2025 13:57:45.233 * <timeseries>     { ts-retention-policy    :            0 }
+1:M 17 Aug 2025 13:57:45.233 * <timeseries>     { ts-duplicate-policy    :        block }
+1:M 17 Aug 2025 13:57:45.233 * <timeseries>     { ts-chunk-size-bytes    :         4096 }
+1:M 17 Aug 2025 13:57:45.233 * <timeseries>     { ts-encoding            :   compressed }
+1:M 17 Aug 2025 13:57:45.233 * <timeseries>     { ts-ignore-max-time-diff:            0 }
+1:M 17 Aug 2025 13:57:45.233 * <timeseries>     { ts-ignore-max-val-diff :     0.000000 }
+1:M 17 Aug 2025 13:57:45.233 * <timeseries> ]
+1:M 17 Aug 2025 13:57:45.233 * <timeseries> Detected redis oss
+1:M 17 Aug 2025 13:57:45.233 * <timeseries> Enabled diskless replication
+1:M 17 Aug 2025 13:57:45.234 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> version: 80200 git sha: unknown branch: unknown
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> Exported RedisJSON_V1 API
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> Exported RedisJSON_V2 API
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> Exported RedisJSON_V3 API
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> Exported RedisJSON_V4 API
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> Exported RedisJSON_V5 API
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> Enabled diskless replication
+1:M 17 Aug 2025 13:57:45.234 * <ReJSON> Initialized shared string cache, thread safe: false.
+1:M 17 Aug 2025 13:57:45.234 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 17 Aug 2025 13:57:45.234 * <search> Acquired RedisJSON_V5 API
+1:M 17 Aug 2025 13:57:45.234 * Server initialized
+1:M 17 Aug 2025 13:57:45.234 * Ready to accept connections tcp
+^C1:signal-handler (1755439068) Received SIGINT scheduling shutdown...
+1:M 17 Aug 2025 13:57:48.250 * User requested shutdown...
+1:M 17 Aug 2025 13:57:48.250 * Saving the final RDB snapshot before exiting.
+1:M 17 Aug 2025 13:57:48.273 * DB saved on disk
+1:M 17 Aug 2025 13:57:48.273 # Redis is now ready to exit, bye bye...
+root@bash:/home/azureuser# docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS     NAMES
+3b38d3969975   redis         "docker-entrypoint.s…"   8 seconds ago    Exited (0) 4 seconds ago              fervent_goldstine
+fead07e429fd   redis:4.0     "docker-entrypoint.s…"   7 minutes ago    Exited (0) 7 minutes ago              funny_cerf
+2f6e7a146c22   redis         "docker-entrypoint.s…"   10 minutes ago   Exited (0) 9 minutes ago              vibrant_hugle
+4029597ab258   redis         "docker-entrypoint.s…"   12 minutes ago   Exited (0) 9 minutes ago              intelligent_elbakyan
+cb5abc8d8042   redis         "docker-entrypoint.s…"   14 minutes ago   Exited (0) 14 minutes ago             stupefied_pasteur
+4987f11746f5   hello-world   "/hello"                 29 hours ago     Exited (0) 29 hours ago               reverent_chatelet
+root@bash:/home/azureuser# docker run -p60:6379 redis:4.0
+1:C 17 Aug 13:59:56.222 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 17 Aug 13:59:56.222 # Redis version=4.0.14, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 17 Aug 13:59:56.222 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 17 Aug 13:59:56.223 * Running mode=standalone, port=6379.
+1:M 17 Aug 13:59:56.223 # Server initialized
+1:M 17 Aug 13:59:56.223 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 17 Aug 13:59:56.223 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 17 Aug 13:59:56.223 * Ready to accept connections
+^C1:signal-handler (1755439199) Received SIGINT scheduling shutdown...
+1:M 17 Aug 13:59:59.332 # User requested shutdown...
+1:M 17 Aug 13:59:59.332 * Saving the final RDB snapshot before exiting.
+1:M 17 Aug 13:59:59.343 * DB saved on disk
+1:M 17 Aug 13:59:59.343 # Redis is now ready to exit, bye bye...
+root@bash:/home/azureuser# docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS     NAMES
+22ab2407afd3   redis:4.0     "docker-entrypoint.s…"   9 seconds ago    Exited (0) 5 seconds ago              friendly_curran
+3b38d3969975   redis         "docker-entrypoint.s…"   2 minutes ago    Exited (0) 2 minutes ago              fervent_goldstine
+fead07e429fd   redis:4.0     "docker-entrypoint.s…"   10 minutes ago   Exited (0) 9 minutes ago              funny_cerf
+2f6e7a146c22   redis         "docker-entrypoint.s…"   12 minutes ago   Exited (0) 12 minutes ago             vibrant_hugle
+4029597ab258   redis         "docker-entrypoint.s…"   14 minutes ago   Exited (0) 11 minutes ago             intelligent_elbakyan
+cb5abc8d8042   redis         "docker-entrypoint.s…"   16 minutes ago   Exited (0) 16 minutes ago             stupefied_pasteur
+4987f11746f5   hello-world   "/hello"                 29 hours ago     Exited (0) 29 hours ago               reverent_chatelet
+root@bash:/home/azureuser# dokcer images
+Command 'dokcer' not found, did you mean:
+  command 'docker' from snap docker (28.1.1+1)
+  command 'docker' from deb docker.io (26.1.3-0ubuntu1~24.04.1)
+  command 'docker' from deb podman-docker (4.9.3+ds1-1ubuntu0.2)
+See 'snap info <snapname>' for additional versions.
+root@bash:/home/azureuser# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    1b44b5a3e06a   8 days ago    10.1kB
+redis         latest    06c3286e0b9e   13 days ago   157MB
+redis         4.0       191c4017dcdd   5 years ago   89.3MB
+root@bash:/home/azureuser# ^C
+root@bash:/home/azureuser# docker logs 22ab2407afd3
+1:C 17 Aug 13:59:56.222 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 17 Aug 13:59:56.222 # Redis version=4.0.14, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 17 Aug 13:59:56.222 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 17 Aug 13:59:56.223 * Running mode=standalone, port=6379.
+1:M 17 Aug 13:59:56.223 # Server initialized
+1:M 17 Aug 13:59:56.223 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 17 Aug 13:59:56.223 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 17 Aug 13:59:56.223 * Ready to accept connections
+1:signal-handler (1755439199) Received SIGINT scheduling shutdown...
+1:M 17 Aug 13:59:59.332 # User requested shutdown...
+1:M 17 Aug 13:59:59.332 * Saving the final RDB snapshot before exiting.
+1:M 17 Aug 13:59:59.343 * DB saved on disk
+1:M 17 Aug 13:59:59.343 # Redis is now ready to exit, bye bye...
+root@bash:/home/azureuser# docker run -d -p6001:6379 --name redis-older:redis:4.0
+docker: 'docker run' requires at least 1 argument
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+See 'docker run --help' for more information
+root@bash:/home/azureuser# docker run -d -p6001:6379 --name redis-older redis:4.0
+420d8749bd8d923ac83ace79e7e7cfac9f3ef9071f773407dc70874fde01c362
+root@bash:/home/azureuser# dokcer ps
+Command 'dokcer' not found, did you mean:
+  command 'docker' from snap docker (28.1.1+1)
+  command 'docker' from deb docker.io (26.1.3-0ubuntu1~24.04.1)
+  command 'docker' from deb podman-docker (4.9.3+ds1-1ubuntu0.2)
+See 'snap info <snapname>' for additional versions.
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+420d8749bd8d   redis:4.0   "docker-entrypoint.s…"   12 seconds ago   Up 11 seconds   0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   redis-older
+root@bash:/home/azureuser# docker run -d -p6000:6379 --name redis-latest redis
+bc4cc34ef431636d483b0b3cfdcf99f4d10fdf8b24433e7d9762e4e982aa8c3e
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED              STATUS              PORTS                                         NAMES
+bc4cc34ef431   redis       "docker-entrypoint.s…"   3 seconds ago        Up 2 seconds        0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   redis-latest
+420d8749bd8d   redis:4.0   "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   redis-older
+root@bash:/home/azureuser# docker logs redis-latest
+Starting Redis Server
+1:C 17 Aug 2025 14:08:29.840 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 17 Aug 2025 14:08:29.840 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 17 Aug 2025 14:08:29.840 * Redis version=8.2.0, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 17 Aug 2025 14:08:29.840 * Configuration loaded
+1:M 17 Aug 2025 14:08:29.840 * monotonic clock: POSIX clock_gettime
+1:M 17 Aug 2025 14:08:29.841 * Running mode=standalone, port=6379.
+1:M 17 Aug 2025 14:08:29.841 * <bf> RedisBloom version 8.2.0 (Git=unknown)
+1:M 17 Aug 2025 14:08:29.841 * <bf> Registering configuration options: [
+1:M 17 Aug 2025 14:08:29.841 * <bf>     { bf-error-rate       :      0.01 }
+1:M 17 Aug 2025 14:08:29.841 * <bf>     { bf-initial-size     :       100 }
+1:M 17 Aug 2025 14:08:29.841 * <bf>     { bf-expansion-factor :         2 }
+1:M 17 Aug 2025 14:08:29.841 * <bf>     { cf-bucket-size      :         2 }
+1:M 17 Aug 2025 14:08:29.841 * <bf>     { cf-initial-size     :      1024 }
+1:M 17 Aug 2025 14:08:29.841 * <bf>     { cf-max-iterations   :        20 }
+1:M 17 Aug 2025 14:08:29.841 * <bf>     { cf-expansion-factor :         1 }
+1:M 17 Aug 2025 14:08:29.841 * <bf>     { cf-max-expansions   :        32 }
+1:M 17 Aug 2025 14:08:29.841 * <bf> ]
+1:M 17 Aug 2025 14:08:29.841 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 17 Aug 2025 14:08:29.846 * <search> Redis version found by RedisSearch : 8.2.0 - oss
+1:M 17 Aug 2025 14:08:29.846 * <search> RediSearch version 8.2.0 (Git=d81ebce)
+1:M 17 Aug 2025 14:08:29.846 * <search> Low level api version 1 initialized successfully
+1:M 17 Aug 2025 14:08:29.846 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000,
+1:M 17 Aug 2025 14:08:29.846 * <search> Initialized thread pools!
+1:M 17 Aug 2025 14:08:29.846 * <search> Disabled workers threadpool of size 0
+1:M 17 Aug 2025 14:08:29.846 * <search> Subscribe to config changes
+1:M 17 Aug 2025 14:08:29.846 * <search> Enabled role change notification
+1:M 17 Aug 2025 14:08:29.846 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 17 Aug 2025 14:08:29.846 * <search> Register write commands
+1:M 17 Aug 2025 14:08:29.846 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 17 Aug 2025 14:08:29.847 * <timeseries> RedisTimeSeries version 80200, git_sha=1439d4a439ca9c063e6ef124a510abff09a5d493
+1:M 17 Aug 2025 14:08:29.847 * <timeseries> Redis version found by RedisTimeSeries : 8.2.0 - oss
+1:M 17 Aug 2025 14:08:29.847 * <timeseries> Registering configuration options: [
+1:M 17 Aug 2025 14:08:29.847 * <timeseries>     { ts-compaction-policy   :              }
+1:M 17 Aug 2025 14:08:29.847 * <timeseries>     { ts-num-threads         :            3 }
+1:M 17 Aug 2025 14:08:29.847 * <timeseries>     { ts-retention-policy    :            0 }
+1:M 17 Aug 2025 14:08:29.847 * <timeseries>     { ts-duplicate-policy    :        block }
+1:M 17 Aug 2025 14:08:29.847 * <timeseries>     { ts-chunk-size-bytes    :         4096 }
+1:M 17 Aug 2025 14:08:29.847 * <timeseries>     { ts-encoding            :   compressed }
+1:M 17 Aug 2025 14:08:29.847 * <timeseries>     { ts-ignore-max-time-diff:            0 }
+1:M 17 Aug 2025 14:08:29.847 * <timeseries>     { ts-ignore-max-val-diff :     0.000000 }
+1:M 17 Aug 2025 14:08:29.847 * <timeseries> ]
+1:M 17 Aug 2025 14:08:29.847 * <timeseries> Detected redis oss
+1:M 17 Aug 2025 14:08:29.847 * <timeseries> Enabled diskless replication
+1:M 17 Aug 2025 14:08:29.847 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> version: 80200 git sha: unknown branch: unknown
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> Exported RedisJSON_V1 API
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> Exported RedisJSON_V2 API
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> Exported RedisJSON_V3 API
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> Exported RedisJSON_V4 API
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> Exported RedisJSON_V5 API
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> Enabled diskless replication
+1:M 17 Aug 2025 14:08:29.847 * <ReJSON> Initialized shared string cache, thread safe: false.
+1:M 17 Aug 2025 14:08:29.848 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 17 Aug 2025 14:08:29.848 * <search> Acquired RedisJSON_V5 API
+1:M 17 Aug 2025 14:08:29.848 * Server initialized
+1:M 17 Aug 2025 14:08:29.848 * Ready to accept connections tcp
+root@bash:/home/azureuser# docke rps
+Command 'docke' not found, did you mean:
+  command 'docker' from deb docker.io (26.1.3-0ubuntu1~24.04.1)
+  command 'docker' from deb podman-docker (4.9.3+ds1-1ubuntu0.2)
+Try: apt install <deb name>
+root@bash:/home/azureuser# docke ps
+Command 'docke' not found, did you mean:
+  command 'docker' from deb docker.io (26.1.3-0ubuntu1~24.04.1)
+  command 'docker' from deb podman-docker (4.9.3+ds1-1ubuntu0.2)
+Try: apt install <deb name>
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+bc4cc34ef431   redis       "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   redis-latest
+420d8749bd8d   redis:4.0   "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   redis-older
+root@bash:/home/azureuser# ^C
+root@bash:/home/azureuser# docker exec -it 420d8749bd8d /bin/bash
+root@420d8749bd8d:/data# ls
+root@420d8749bd8d:/data# ls -la
+total 8
+drwxr-xr-x 2 redis redis 4096 Apr 23  2020 .
+drwxr-xr-x 1 root  root  4096 Aug 17 14:06 ..
+root@420d8749bd8d:/data#
+root@420d8749bd8d:/data# exit
+exit
+root@bash:/home/azureuser# docker stop .
+Error response from daemon: page not found
+root@bash:/home/azureuser# docker stop *
+Error response from daemon: No such container: *
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+bc4cc34ef431   redis       "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes   0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   redis-latest
+420d8749bd8d   redis:4.0   "docker-entrypoint.s…"   7 minutes ago   Up 7 minutes   0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   redis-older
+root@bash:/home/azureuser# ^C
+root@bash:/home/azureuser# docker stop bc4cc34ef431
+bc4cc34ef431
+root@bash:/home/azureuser# ^C
+root@bash:/home/azureuser# docker stop 420d8749bd8d
+420d8749bd8d
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@bash:/home/azureuser# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    1b44b5a3e06a   8 days ago    10.1kB
+redis         latest    06c3286e0b9e   13 days ago   157MB
+redis         4.0       191c4017dcdd   5 years ago   89.3MB
+root@bash:/home/azureuser# docker networ ls
+docker: unknown command: docker networ
+
+Run 'docker --help' for more information
+root@bash:/home/azureuser# docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+7c519bbf5df6   bridge    bridge    local
+243dcf758fb6   host      host      local
+560aa62059ea   none      null      local
+root@bash:/home/azureuser# docker network create mongo-network
+27ca87333e87de3ea42e5ae7852d898d078ccba97196bedb62bedc1832a6abd7
+root@bash:/home/azureuser# docker network ls
+NETWORK ID     NAME            DRIVER    SCOPE
+7c519bbf5df6   bridge          bridge    local
+243dcf758fb6   host            host      local
+27ca87333e87   mongo-network   bridge    local
+560aa62059ea   none            null      local
+root@bash:/home/azureuser# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    1b44b5a3e06a   8 days ago    10.1kB
+redis         latest    06c3286e0b9e   13 days ago   157MB
+redis         4.0       191c4017dcdd   5 years ago   89.3MB
+root@bash:/home/azureuser# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@bash:/home/azureuser# docker
