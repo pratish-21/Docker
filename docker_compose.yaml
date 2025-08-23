@@ -1,5 +1,9 @@
 version: '3'
 services:
+# my-app: 
+#  image: 46758587.acr.aws.io/my-app:1.0 #to pull specificed image from a private repository
+#  ports:
+#   - 3000:3000
  mongodb:
   image: mongo
   ports:
@@ -7,6 +11,8 @@ services:
   environment:
    - MONGO_INITDB_ROOT_USERNAME = admin
    - MONGO_INITDB_ROOT_PASSWORD = password
+  volumes:
+   - mongo-data: /data/db #named volume
   mongo-express:
    image: mongo-express
    ports: 
@@ -14,6 +20,9 @@ services:
    environment:
    - MONGO_INITDB_ROOT_USERNAME = admin
    - MONGO_INITDB_ROOT_PASSWORD = password
+#volumes:
+# mongo-data:
+#  driver: local
     
 #to execute this file -> docker-compose -f docker-compose.yaml<file name> up -> for starting the containers
 # docker-compose -f docker-compose.yaml<file name> up -d -> for id
